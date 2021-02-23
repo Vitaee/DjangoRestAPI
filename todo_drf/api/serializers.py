@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from .models import Projects
 from django.contrib.auth.models import User
 
 # User Serializer
@@ -18,3 +19,12 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
 
         return user
+
+
+
+
+
+class ProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Projects
+        fields = '__all__'

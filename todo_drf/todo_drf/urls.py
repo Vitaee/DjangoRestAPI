@@ -1,4 +1,4 @@
-"""myapi URL Configuration
+"""todo_drf URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -14,15 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from myapi.core import views
-from knox import views as knox_views
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.HomeList().as_view(),name='homepage'),
-    path('api/register/', views.RegisterAPI.as_view(), name='register'),
-    path('api/login/', views.LoginAPI.as_view(), name='login'),
-    path('api/logout/', knox_views.LogoutView.as_view(), name='logout'),
-    path('api/logoutall/', knox_views.LogoutAllView.as_view(), name='logoutall'),
+    path('api/', include('api.urls')),
 ]
