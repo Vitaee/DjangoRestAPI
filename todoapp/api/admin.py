@@ -1,4 +1,7 @@
 from django.contrib import admin
-from .models import Projects
+
 # Register your models here.
-admin.site.register(Projects)
+
+from .models import Task
+
+admin.site.register(Task)
