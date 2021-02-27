@@ -9,7 +9,6 @@ from .models import Task
 # Create your views here.
 
 
- # FUNCTİON BASED VİEWS    , CLASS BASED VİEWS
 @api_view(['GET'])
 def apiOverview(request):
 	api_urls = {

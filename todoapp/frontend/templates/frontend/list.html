@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Add Project</title>
-
+	<link rel="icon" sizes="192x192" href="{% static 'images/apziva_icon.png' %}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -84,7 +85,7 @@
 					</div>
 					<br>
 					<div style="flex: 1">
-						<input id="submit" class="btn" type="submit" >
+						<input id="submit" class="btn" type="submit" value="Submit" >
 					</div>
 				</form>
 			</div>
@@ -166,6 +167,8 @@
 
 					var title = `<span class="title">${list[i].title}</span>`
 					var content = `<span class="content">${list[i].content}</span>`
+                    var date = `<span class="date">${list[i].regisDate}</span>`
+
 					if (list[i].completed == true){
 						title = `<strike class="title">${list[i].title}</strike>`
 						content = `<strike class="content">${list[i].content}</strike>`
@@ -182,9 +185,12 @@
 							<div style="flex:1">
 								<button class="btn btn-sm btn-outline-info edit">Edit </button>
 							</div>
+
 							<div style="flex:1">
 								<button class="btn btn-sm btn-outline-dark delete">-</button>
+
 							</div>
+                            <p> ${date.split('T')[0]} </p>
 						</div>
 
 					`
