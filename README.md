@@ -1,5 +1,5 @@
 # DjangoRestAPI
-Apziva SE Intern Project
+Simple todoapp to understand django rest framework.
 
 # ScreenShot
 
