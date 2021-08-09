@@ -1,12 +1,10 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-
 from rest_framework.decorators import api_view
+from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.response import Response
-from .serializers import TaskSerializer
-
-from .models import Task
-# Create your views here.
+from .serializers import TaskSerializer, UserSerializer
+from .models import Task, User
 
 
 @api_view(['GET'])
@@ -20,6 +18,33 @@ def apiOverview(request):
 		}
 
 	return Response(api_urls)
+
+
+@api_view(['POST'])
+def user_login(request):
+	username = request.data['username']
+	password = request.data['password']
+
+	user = User.objects.filter(username=username).first()
+
+	if user is None:
+		raise AuthenticationFailed('User not found!')
+
+	if not user.check_password(password):
+		raise AuthenticationFailed('Incorrect password!')
+
+	return Response('Logged in!')
+
+
+
+@api_view(['POST'])
+def user_register(request):
+	serializer = UserSerializer(data=request.data)
+
+	if serializer.is_valid():
+		serializer.save()
+
+	return Response(serializer.data)
 
 @api_view(['GET'])
 def taskList(request):

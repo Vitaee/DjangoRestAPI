@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'api.apps.ApiConfig',
+    'corsheaders',
     'frontend.apps.FrontendConfig',
 
     'rest_framework',
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -81,12 +82,11 @@ WSGI_APPLICATION = 'todo_drf.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'first_apziva', 
-        'USER': 'apziva_user', 
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tododb',
+        'USER': 'root',
         'PASSWORD': '123456',
         'HOST': '127.0.0.1', 
-        'PORT': '5432',
     }
 }
 
@@ -129,3 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+AUTH_USER_MODEL = 'api.User'
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
