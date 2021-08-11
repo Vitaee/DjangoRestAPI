@@ -9,6 +9,28 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
 	<style type="text/css">
+  .myButton {
+	background-color:#db3621;
+	border-radius:28px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+      float: right;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#e31616;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
 		body{
 		  background: rgb(54,217,182);
 		  background: linear-gradient(90deg, rgba(54,217,182,1) 0%, rgba(32,152,126,1) 43%, rgba(0,212,255,1) 100%);
@@ -73,8 +95,23 @@
 
 		<div id="task-container">
 			<div id="form-wrapper">
+                <div class="row" style="display: flex; justify-content: space-around">
+
+                <div><h4 id="infop"></h4></div>
+                    <div></div>
+
+               <div class="mb-4"> <button name="logout" class="myButton"  onclick="logout_user()"> Logout</button></div>
+
+
+                </div>
+                <br>
+
+
+                <br>
+
 				<form id="form">
 					<div class="flex-wrapper">
+
 						<div style="flex: 6">
 							<input id="title" class="form-control" type="text" name="title" placeholder="Add title">
 							<br>
@@ -97,6 +134,11 @@
 
 	</div>
 
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
 	<script type="text/javascript">
 		/*
 			KEY COMPONENTS:
@@ -116,6 +158,27 @@
 			-- Remove extra data on re-render
 			-- CSRF Token
 		*/
+
+
+        getUser()
+
+        function getUser() {
+            $.ajax({
+                type: 'GET',
+                url: '/api/current-user/',
+                success: function(data) {
+                     var info_prj = document.getElementById('infop')
+                    var item = `Hello Dear,  <b>${data['username'] }</b> </h4> `
+                    info_prj.innerHTML += item
+                },
+                error: function() {
+                    window.location.href = '/login'
+                }
+            })
+
+
+        }
+
 
 		function getCookie(name) {
 		    var cookieValue = null;
@@ -322,6 +385,23 @@
 
 
 	</script>
+
+    <script>
+        function logout_user(){
+            $.ajax({
+                type: 'POST',
+                url: '/api/user-logout/',
+                success: function(data) {
+                    alert('Loggged out!')
+                    window.location.href = '/login'
+                },
+                error: function() {
+                    alert('Error accured!');
+                }
+            })
+        }
+
+    </script>
 
 </body>
 </html>

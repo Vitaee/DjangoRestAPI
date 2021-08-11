@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26243e39-6c0d-4313-8f39-2dc62ff964ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/user_login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/user_register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DjangoRestAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoRestAPI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/newpass.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/user_fpassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todoapp/api/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/api/migrations/0002_task_regisdate.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/todoapp/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todoapp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todoapp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todoapp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todoapp/frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/frontend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todoapp/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/frontend/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todoapp/todo_drf/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/todo_drf/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +61,8 @@
       <option name="presentableId" value="Default" />
       <updated>1628514093723</updated>
       <workItem from="1628514096822" duration="4130000" />
+      <workItem from="1628678958621" duration="877000" />
+      <workItem from="1628669840015" duration="2773000" />
     </task>
     <servers />
   </component>
@@ -82,6 +79,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

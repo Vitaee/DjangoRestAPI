@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'frontend.apps.FrontendConfig',
 
     'rest_framework',
+    'django_rest_passwordreset',
 
 ]
 
@@ -129,6 +130,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'canow712@gmail.com'
+EMAIL_HOST_PASSWORD = 'polat123can'
+EMAIL_PORT = 587
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True

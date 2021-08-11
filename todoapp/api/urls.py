@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -6,8 +6,9 @@ urlpatterns = [
 
 	path('user-login/', views.user_login, name="user-register"),
 	path('user-register/', views.user_register, name="user-login"),
-
-
+	path('current-user/', views.get_user, name='current-user'),
+	path('user-logout/', views.user_logout),
+	path('password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
 
 
 	path('task-list/', views.taskList, name="task-list"),
