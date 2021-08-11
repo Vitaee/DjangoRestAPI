@@ -1,4 +1,4 @@
-# DjangoRestAPI
+# Django Restful Api
 Simple todoapp to understand django rest framework.
 
 - User Auth. with jwt
