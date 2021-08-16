@@ -1,8 +1,11 @@
-# DjangoRestAPI
-Simple todoapp & user jwt auth. to understand django rest framework.
+# Django Restful Api
+Simple todoapp to understand django rest framework.
+
+- User Auth. with jwt
+- Forget password future added.
 
 # ScreenShot
 
-![anasayfa](https://i.ibb.co/FJ160D3/updatedproject.png)
+![anasayfa](https://i.hizliresim.com/fti2js.png)
 
 
