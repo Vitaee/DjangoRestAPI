@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26243e39-6c0d-4313-8f39-2dc62ff964ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/todoapp/api/migrations/0002_auto_20210816_1111.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/api/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/user_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/user_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/frontend/urls.py" afterDir="false" />
-    </list>
+    <list default="true" id="26243e39-6c0d-4313-8f39-2dc62ff964ee" name="Changes" comment="readme update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,8 +50,16 @@
       <workItem from="1628514096822" duration="4130000" />
       <workItem from="1628678958621" duration="877000" />
       <workItem from="1628669840015" duration="2773000" />
-      <workItem from="1629098874536" duration="4764000" />
+      <workItem from="1629098874536" duration="5090000" />
     </task>
+    <task id="LOCAL-00001" summary="readme update">
+      <created>1629103943117</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1629103943117</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,5 +79,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="readme update" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme update" />
   </component>
 </project>

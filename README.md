@@ -6,6 +6,6 @@ Simple todoapp to understand django rest framework.
 
 # ScreenShot
 
-![anasayfa](https://i.hizliresim.com/fti2js.png)
+![anasayfa](https://i.ibb.co/FJ160D3/updatedproject.png)
 
 
