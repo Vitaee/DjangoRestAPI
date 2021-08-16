@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.response import Response
-from .serializers import TaskSerializer, UserSerializer, UserRegisterSerializer
+from .serializers import TaskSerializer,TaskRegisterSerializer ,UserSerializer, UserRegisterSerializer
 from .models import Task, User
 import jwt, datetime
 
@@ -122,7 +122,7 @@ def taskDetail(request, pk):
 
 @api_view(['POST'])
 def taskCreate(request):
-    serializer = TaskSerializer(data=request.data)
+    serializer = TaskRegisterSerializer(data=request.data)
 
     if serializer.is_valid():
         serializer.save()

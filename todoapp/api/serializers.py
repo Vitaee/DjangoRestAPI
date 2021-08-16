@@ -2,6 +2,12 @@ from rest_framework import serializers
 from .models import Task, User
 
 
+class TaskRegisterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = ['id', 'title', 'content', 'created_by']
+
+
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task

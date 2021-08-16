@@ -81,9 +81,13 @@
 							<input id="password" class="form-control" type="password" name="content" placeholder="Password">
 
 						</div>
-        <br>
-					<div style="flex: 1">
+
+                <a href="{% url 'userFpass' %}" class="btn"> Forget your password? </a>
+		            <br>
+        <div style="flex: 1">
                         <button id="submit" class="btn" onclick="user_login()" >Login</button>
+                        &nbsp;&nbsp;
+                        <a href="{% url 'register'  %}" id="submit" class="btn" >Register</a>
 					</div>
 
 

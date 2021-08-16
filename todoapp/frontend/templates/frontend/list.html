@@ -112,6 +112,7 @@
 				<form id="form">
 					<div class="flex-wrapper">
 
+
 						<div style="flex: 6">
 							<input id="title" class="form-control" type="text" name="title" placeholder="Add title">
 							<br>
@@ -140,35 +141,14 @@
         crossorigin="anonymous"></script>
 
 	<script type="text/javascript">
-		/*
-			KEY COMPONENTS:
-			"activeItem" = null until an edit button is clicked. Will contain object of item we are editing
-			"list_snapshot" = Will contain previous state of list. Used for removing extra rows on list update
-			
-			PROCESS:
-			1 - Fetch Data and build rows "buildList()"
-			2 - Create Item on form submit
-			3 - Edit Item click - Prefill form and change submit URL
-			4 - Delete Item - Send item id to delete URL
-			5 - Cross out completed task - Event handle updated item
-
-			NOTES:
-			-- Add event handlers to "edit", "delete", "title"
-			-- Render with strike through items completed
-			-- Remove extra data on re-render
-			-- CSRF Token
-		*/
-
-
         getUser()
-
         function getUser() {
             $.ajax({
                 type: 'GET',
                 url: '/api/current-user/',
                 success: function(data) {
                      var info_prj = document.getElementById('infop')
-                    var item = `Hello Dear,  <b>${data['username'] }</b> </h4> `
+                    var item = `Hello Dear,  <b>${data['username'] }</b> `
                     info_prj.innerHTML += item
                 },
                 error: function() {
@@ -205,10 +185,6 @@
 
 		function buildList(){
 			var wrapper = document.getElementById('list-wrapper')
-			//wrapper.innerHTML = ''
-
-
-
 			var url = 'http://127.0.0.1:8000/api/task-list/'
 
 			fetch(url)
@@ -232,8 +208,9 @@
 					var title = `<span class="title">${list[i].title}</span>`
 					var content = `<span class="content">${list[i].content}</span>`
                     var date = `<span class="date">${list[i].regisDate}</span>`
+                    var created_by = `<b>${list[i].created_by}</b>`
 					
-					if (list[i].completed == true){
+					if (list[i].completed === true){
 						title = `<strike class="title">${list[i].title}</strike>`
 						content = `<strike class="content">${list[i].content}</strike>`
 						date = `<strike class="content">${list[i].regisDate}</strike>`
@@ -242,6 +219,8 @@
 					var item = `
 						<div id="data-row-${i}" class="task-wrapper flex-wrapper">
 							<div style="flex:7">
+                                <p>Created By: ${created_by}</p>
+                                <br>
 								<p>Title: ${title}</p>
 								<br>
 								<p>Content: ${content}</p>
@@ -328,6 +307,9 @@
 
 			var title = document.getElementById('title').value
 			var content = document.getElementById('content').value
+            let user_name = document.getElementById('infop').textContent
+            user_name = user_name.split(",")[1].replaceAll(' ', '')
+            console.log(user_name)
 			
 			fetch(url, {
 				method:'POST',
@@ -335,7 +317,7 @@
 					'Content-type':'application/json',
 					'X-CSRFToken':csrftoken,
 				},
-				body:JSON.stringify({'title':title, 'content':content})
+				body:JSON.stringify( {'title':title, 'content':content, 'created_by':  user_name } )
 			}
 			).then(function(response){
 				buildList()
