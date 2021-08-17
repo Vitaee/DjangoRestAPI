@@ -345,8 +345,17 @@
 					'X-CSRFToken':csrftoken,
 				}
 			}).then((response) => {
-				buildList()
-			})
+
+			    if (response.status === 403){
+			        alert("You can only delete the ones you created!")
+
+                } else {
+			        buildList()
+                }
+			}).catch( (err) => {
+			    console.log(err)
+
+            })
 		}
 
 		function strikeUnstrike(item){

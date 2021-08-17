@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26243e39-6c0d-4313-8f39-2dc62ff964ee" name="Changes" comment="readme update" />
+    <list default="true" id="26243e39-6c0d-4313-8f39-2dc62ff964ee" name="Changes" comment="readme update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoapp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/list.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +23,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1wUXMOhto3bYqM5NclyFqxwbvcW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -50,7 +62,8 @@
       <workItem from="1628514096822" duration="4130000" />
       <workItem from="1628678958621" duration="877000" />
       <workItem from="1628669840015" duration="2773000" />
-      <workItem from="1629098874536" duration="5090000" />
+      <workItem from="1629098874536" duration="5347000" />
+      <workItem from="1629197007444" duration="2475000" />
     </task>
     <task id="LOCAL-00001" summary="readme update">
       <created>1629103943117</created>
@@ -59,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629103943117</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="readme update">
+      <created>1629104051287</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1629104051287</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

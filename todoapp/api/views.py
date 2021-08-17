@@ -1,7 +1,8 @@
 from rest_framework.decorators import api_view
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.response import Response
-from .serializers import TaskSerializer,TaskRegisterSerializer ,UserSerializer, UserRegisterSerializer
+from rest_framework import status
+from .serializers import TaskSerializer, TaskRegisterSerializer, UserSerializer, UserRegisterSerializer
 from .models import Task, User
 import jwt, datetime
 
@@ -143,7 +144,15 @@ def taskUpdate(request, pk):
 
 @api_view(['DELETE'])
 def taskDelete(request, pk):
-    task = Task.objects.get(id=pk)
-    task.delete()
+    token = request.COOKIES.get('jwt')
+    payload = jwt.decode(token, 'secret-app-key', algorithms=['HS256'])
 
-    return Response('Item succsesfully delete!')
+    user = User.objects.get(email=payload['email'])
+
+    try:
+        task = Task.objects.get(id=pk, created_by=user.username)
+        task.delete()
+        return Response({'msg': 'Item deleted successfully'}, status=status.HTTP_200_OK)
+
+    except Exception as err:
+        return Response({'msg': 'You do not have access to this item!'}, status=status.HTTP_403_FORBIDDEN)
