@@ -320,8 +320,14 @@
 				body:JSON.stringify( {'title':title, 'content':content, 'created_by':  user_name } )
 			}
 			).then(function(response){
-				buildList()
-				document.getElementById('form').reset()
+			    if (response.status === 403 && activeItem == null){
+			        alert("You can only edit / update the ones you created!")
+                    document.getElementById('form').reset()
+                } else {
+			        buildList()
+				    document.getElementById('form').reset()
+                }
+
 			})
 		})
 

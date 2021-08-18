@@ -133,13 +133,23 @@ def taskCreate(request):
 
 @api_view(['POST'])
 def taskUpdate(request, pk):
-    task = Task.objects.get(id=pk)
-    serializer = TaskSerializer(instance=task, data=request.data)
+    token = request.COOKIES.get('jwt')
+    payload = jwt.decode(token, 'secret-app-key', algorithms=['HS256'])
 
-    if serializer.is_valid():
-        serializer.save()
+    user = User.objects.get(email=payload['email'])
 
-    return Response(serializer.data)
+    try:
+        task = Task.objects.get(id=pk,created_by=user.username)
+        serializer = TaskSerializer(instance=task, data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+
+        return Response(serializer.data)
+
+    except Exception as err:
+        return Response({'msg': 'You do not have access to this item!'}, status=status.HTTP_403_FORBIDDEN)
+
 
 
 @api_view(['DELETE'])

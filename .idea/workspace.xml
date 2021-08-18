@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26243e39-6c0d-4313-8f39-2dc62ff964ee" name="Changes" comment="Users can see but can not delete others task.">
+    <list default="true" id="26243e39-6c0d-4313-8f39-2dc62ff964ee" name="Changes" comment="api schema">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoapp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/frontend/templates/frontend/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,9 @@
       <workItem from="1628678958621" duration="877000" />
       <workItem from="1628669840015" duration="2773000" />
       <workItem from="1629098874536" duration="5347000" />
-      <workItem from="1629197007444" duration="4427000" />
+      <workItem from="1629197007444" duration="4494000" />
+      <workItem from="1629282809984" duration="430000" />
+      <workItem from="1629283383724" duration="447000" />
     </task>
     <task id="LOCAL-00001" summary="readme update">
       <created>1629103943117</created>
@@ -85,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629203775424</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="api schema">
+      <created>1629205943857</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1629205943857</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +117,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="readme update" />
     <MESSAGE value="Users can see but can not delete others task." />
-    <option name="LAST_COMMIT_MESSAGE" value="Users can see but can not delete others task." />
+    <MESSAGE value="api schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="api schema" />
   </component>
 </project>
