@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:latest
+    container_name: teachteam-mysql-db
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: test
+      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_HOST: '%'
+
+
+  todo_app:
+    build:
+      context: .
+    
+    command: python3 manage.py runserver 0.0.0.0:8000
+    container_name: todo_app
+    volumes:
+      - ./:/app
+      - ./media:/media
+    environment:
+      - DB_HOST=mysql-db
+      - DB_NAME=todoapp_dev
+      - DB_USER=root
+      - DB_PASS=123456
+    depends_on:
+      - mysql-db
+    ports:
+      - 8000:8000
+      - 3000:3000
+
