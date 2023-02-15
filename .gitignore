@@ -130,3 +130,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+init.sql
+/docker-entrypoint-initdb.d/init.sql

@@ -6,10 +6,17 @@ services:
     container_name: teachteam-mysql-db
     ports:
       - "3307:3306"
+    env_file:
+      - .env
+    command:
+      - --authentication_policy=mysql_native_password 
+      - --init-file=/docker-entrypoint-initdb.d/init.sql
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_USER: test
-      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
       MYSQL_ROOT_HOST: '%'
 
 
@@ -17,16 +24,22 @@ services:
     build:
       context: .
     
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: > 
+      sh -c "
+            python3 manage.py makemigrations &&
+            python3 manage.py migrate && 
+            python3 manage.py runserver 0.0.0.0:8000"
     container_name: todo_app
     volumes:
       - ./:/app
       - ./media:/media
+    env_file:
+      - .env
     environment:
       - DB_HOST=mysql-db
-      - DB_NAME=todoapp_dev
-      - DB_USER=root
-      - DB_PASS=123456
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
     depends_on:
       - mysql-db
     ports:

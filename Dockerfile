@@ -15,7 +15,7 @@ RUN apk update \
 
 ENV LD_LIBRARY_PATH /usr/lib/instantclient
                        
-COPY initdb.sql /docker-entrypoint-initdb.d/initdb.sql
+COPY init.sql /docker-entrypoint-initdb.d/init.sql
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
