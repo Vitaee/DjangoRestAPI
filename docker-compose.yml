@@ -39,7 +39,7 @@ services:
       sh -c "
             python3 manage.py makemigrations &&
             python3 manage.py migrate && 
-            python3 manage.py runserver 0.0.0.0:8001"
+            python3 manage.py runserver 0.0.0.0:7070"
     restart: always
     volumes:
       - ./:/app
@@ -60,7 +60,7 @@ services:
     networks:
       - app-network
     ports:
-      - 8001:8001
+      - 7070:7070
 
 networks:
   app-network:
