@@ -25,11 +25,11 @@ services:
   nginx:
     image: nginx:latest
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-    ports:
-      - 70:70
+      - ./nginx.conf:/etc/nginx/nginx.conf    
     depends_on:
       - web
+    ports:
+      - "90:90"
     networks:
       - app-network
     restart: "on-failure" 
@@ -42,8 +42,11 @@ services:
       sh -c "
             python3 manage.py makemigrations &&
             python3 manage.py migrate && 
-            python3 manage.py runserver 0.0.0.0:7070"
+            python3 manage.py runserver 0.0.0.0:5000"
+
     restart: always
+    ports:
+      - "5000"
     volumes:
       - ./:/app
       - ./media:/media
@@ -54,10 +57,7 @@ services:
       - DB_NAME=${DB_NAME}
       - DB_USER=${DB_USER}
       - DB_PASS=${DB_PASS}
-    
-    deploy:
-      replicas: 3
-    
+
     depends_on:
       - mysql-db
     networks:

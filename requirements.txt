@@ -7,3 +7,4 @@ django-cors-headers
 django-rest-passwordreset
 mysqlclient
 python-dotenv
+gunicorn
