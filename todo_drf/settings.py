@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'todo_drf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': os.getenv('DB_HOST'),
+        'HOST': 'mysql-db',
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASS'),
