@@ -4,10 +4,10 @@ from . import views
 urlpatterns = [
 	path('', views.apiOverview, name="api-overview"),
 
-	path('user-login/', views.user_login, name="user-register"),
-	path('user-register/', views.user_register, name="user-login"),
-	path('current-user/', views.get_user, name='current-user'),
-	path('user-logout/', views.user_logout),
+	path('user-login/', views.UserLoginView.as_view(), name="user-register"),
+	path('user-register/', views.UserRegisterView.as_view(), name="user-login"),
+	path('current-user/', views.GetUserView.as_view(), name='current-user'),
+	path('user-logout/', views.UserLogoutView.as_view()),
 	path('password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
 
 
