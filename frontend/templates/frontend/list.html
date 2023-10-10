@@ -93,7 +93,22 @@
 <body>
 	<div class="container">
 
+			<div class="notifications">
+				<ul>
+					{% for notification in  user.notifications.unread %}
+					<div>
+					  Message from <b>{{ notification.actor }}</b>
+					  <button class="dropdown-item" type="button">{{ notification.verb }}</button>			
+					  </div>
+					  <div class="dropdown-divider"></div>
+				  {% endfor %}
+				</ul>
+			</div>
+
+
+
 		<div id="task-container">
+
 			<div id="form-wrapper">
                 <div class="row" style="display: flex; justify-content: space-around">
 

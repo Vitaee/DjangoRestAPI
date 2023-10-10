@@ -1,8 +1,12 @@
 from django.shortcuts import render
-
+from api.models import User
 
 def list(request):
-    return render(request, 'frontend/list.html')
+    from notifications.signals import notify
+    recipient = User.objects.get(id=1) 
+    notify.send(recipient, recipient=recipient, verb='New Contact us request')
+
+    return render(request, 'frontend/list.html', context={'user': recipient})
 
 
 def user_login(request):

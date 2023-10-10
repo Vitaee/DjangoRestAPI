@@ -8,3 +8,4 @@ django-rest-passwordreset
 mysqlclient
 python-dotenv
 gunicorn
+django-notifications-hq
